@@ -1,38 +1,222 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--inter-font) !important;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.btn_class{
+  border: 1px solid rgb(255, 255, 255);
+  background: none;
+  padding: 10px 20px;
+  border-radius: 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn_class:hover{
+  background-color: black;
+  border: 1px solid rgb(0, 0, 0);
+  transition: 0.2s ease-in;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.head h1{
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+/* add to cart css button  */
+.addtocart{
+  border: 1px solid red;
+  padding: 9px 22px;
+  border-radius: 30px;
+  background: none !important;
+  border: 1px solid rgb(35, 31, 30);;
+}
+
+.addtocart:hover{
+  background-color: #166324e6 !important;
+    color: white;
+    transition: 0.3s ease-in;
+}
+
+:root{
+  --inter-font: 'Inter', sans-serif;
+ 
+ 
+}
+.gap-10{
+  gap:10px;
+}
+.gap-15{
+  gap:15px;
+}
+
+.gap-30{
+  gap:30px;
+}
+
+/* topnav start here */
+.topnav_bg{
+ 
+  background-color:  #003D29;
+  z-index: 1;
+}
+
+/* topnav end here */
+
+
+/* navbar start here  */
+.navbar_hit{
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  background-color: #f5f6f6;
+}
+
+/* navbar end here  */
+
+/* dropfunction start here  */
+.dropdown_menulist{
+ 
+  font-size: 12px !important;
+  color: white !important;
+}
+
+/* dropfunction end here  */
+
+
+/* shop our top categories start  */
+.shop_our_top_categories, .Choose_by_brand{
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+
+
+.shop_our_top_categories .card{
+  overflow: hidden;
+  
+}
+
+.shop_our_top_categories .card-img-top{
+  transition: all 0.2s linear;
+}
+
+.shop_our_top_categories .card-img-top:hover{
+ 
+  transform: scale(1.2);
+  transition: all 0.2s linear;
+ 
+
+ 
+
+}
+
+.shop_our_top_categories .card .card-body{
+  position: absolute!important;
+  top: 0 !important;
+  right: 0px;
+  left: -1px;
+  color: white;
+
+}
+
+/* shop our top categories end  */
+
+/* today best deal start ------- */
+.bestdeal_hit{
+  background: #f5f6f6 !important;
+  
+
+ 
+}
+/* today best deal end ---------- */
+
+/* choosehow start here */
+
+.chooseshow_background{
+  background-color: #f5f6f6;
+  padding: 20px;
+  border: 1px solid #f5f6f6;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+.chooseshow_background:hover{
+  border: 1px solid black;
+}
+
+.chooseshow_background .chose_img:hover{
+  transform: scale(1.2) !important;
+  transition: all 0.2s linear;
+}
+
+/* chooseshow end here  */
+
+/* getupto start here  */
+.getupto_controls .card {
+ background-color: #F2E4D9;
+ border: none;
+ transition: all 0.3s linear;
+ cursor: pointer;
+}
+
+.getupto_controls .card{
+  overflow: hidden;
+  transition: all 0.3s linear;
+  transform: scale(1.1);
+}
+
+.getupto_controls .card .card-img-end:hover{
+  transform: scale(1.1);
+  transition: all 0.3s linear;
+}
+
+/* get up to end here  */
+
+/* bannerinner start here  */
+.banner_inner_here img{
+  margin-top: 6%;
+  margin-bottom: 6%;
+background-position: center;
+background-size: cover;
+  height: 56vh;
+  width: 100%;
+}
+
+/* bannerinner end here */
+.green_bannerinner_background{
+  background: rgb(21, 88, 26);
+  width: auto;
+  color: white;
+  top: 31%;
+  right: 3%;
+  padding: 20px;
+}
+
+/* allproduct start here  */
+
+
+/* allproduct ends here  */
+
+/* media query start  */
+
+@media screen and (max-width:769px){
+  .topnav_bg{
+   display: none !important;
   }
 }
