@@ -38,8 +38,8 @@ const Allproducthere = () => {
                      data &&   data.map((item, i) => {
                             return (
                                 <div key={i}>
-                                    <div class="card mb-4" style={{ width: "18rem", cursor:"pointer" }}>
-                                        <img class="card-img-top" src={item.image} alt="Card image cap" className='bestdeal_hit' style={{height: "20rem"}} />
+                                    <div class="card mb-4" style={{ width: "20rem", cursor:"pointer" }}>
+                                        <img class="card-img-top" src={item.image} alt="Card image cap" className='bestdeal_hit' style={{height: "15rem",width: "100%", padding: "20px"}} />
                                         <div class="card-body">
                                             <div className='card_controls_content d-flex justify-content-between'>
                                                 <h4 class="card-title">{item.title}</h4>

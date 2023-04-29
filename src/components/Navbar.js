@@ -4,10 +4,16 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import Badge from '@mui/material/Badge';
 import { useSelector } from 'react-redux';
-import Link from 'antd/es/typography/Link';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-  const item = useSelector(state => state.cart)
+  const item = useSelector(state => state.cart.products)
+  const Navigate = useNavigate();
+
+  const handleClick = (e) =>{
+      Navigate("/cartdata")
+  }
 
   return (
     
@@ -16,9 +22,9 @@ const Navbar = () => {
       <div className='container'>
         <div className='row'>
           <div className='navbar_controls d-flex justify-content-between align-items-center my-3'>
-           <Link to = "/">
-              <img src='https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e86ab4c21faa7bc0bd90dd_Logo.svg' alt='logo' />
-            
+                
+             <Link to = "/"> <img src='https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e86ab4c21faa7bc0bd90dd_Logo.svg' alt='logo' />
+             </Link>
             <MegaMenu />
             <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
@@ -28,18 +34,18 @@ const Navbar = () => {
               <PersonOutlineIcon />
               <p className='mb-0' style={{ cursor: "pointer" }}>Account</p>
 
-              <Link to="/cart">
-                <Badge badgeContent={item.length} color="primary">
 
-                  <AddShoppingCartIcon />
-
+              
+              <Badge badgeContent={item.length} color="primary">
+             
+                  <AddShoppingCartIcon onClick={handleClick}/>
+                 
                 </Badge>
-              </Link>
-
+               
 
             </div>
           </div>
-          </Link>
+     
         </div>
       </div>
 

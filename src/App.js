@@ -7,8 +7,9 @@ import Topnav from './components/Topnav';
 import Navbar from './components/Navbar';
 import  Home from './components/Pages/Home';
 import {Routes,Route} from 'react-router-dom';
+import CartData from './components/Pages/CartData';
 
-import  Cart from './components/Pages/Cart';
+
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
    <Navbar/>
    <Routes>
    <Route path= '/' element= {<Home/>}/>
-   <Route path='/cart' element= {<Cart/>}/>
+   <Route path= '/cartdata' element= {<CartData/>}/>
    
    </Routes>
     </div>
