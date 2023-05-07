@@ -2,7 +2,16 @@ import React from 'react'
 import Slider from "react-slick";
 import RatingStar from './RatingStar';
 import AddtoCartbutton from './AddtoCartbutton';
+import { useDispatch, useSelector } from 'react-redux';
+import { addcart } from './Redux/slices/cartslices';
 const BestDeal = () => {
+
+    const getitem = useSelector((state) => state.allcart.products)
+    console.log(getitem);
+
+    const dispatch = useDispatch();
+
+
     var settings = {
         dots: false,
         infinite: false,
@@ -61,7 +70,7 @@ const BestDeal = () => {
                     <p className='mb-0 mt-2'>Table with air purifier, staned veneer/black</p>
                     <RatingStar />
                     <div className='btn_addtocart mt-2'>
-                        <AddtoCartbutton />
+                        
                     </div>
 
                 </div>
@@ -77,7 +86,7 @@ const BestDeal = () => {
                     <p className='mb-0 mt-2'>Selfie mode and selfie mirror, Macro mode</p>
                     <RatingStar />
                     <div className='btn_addtocart mt-2'>
-                        <AddtoCartbutton />
+                       
                     </div>
 
 
@@ -95,59 +104,59 @@ const BestDeal = () => {
                     <p className='mb-0 mt-2'>Table with air purifier, staned veneer/black</p>
                     <RatingStar />
                     <div className='btn_addtocart mt-2'>
-                        <AddtoCartbutton />
+                       
                     </div>
                 </div>
 
                 <div>
 
-                <div className='bestdeal_hit'>
-                    <img src='/img/deal/a4.png' alt='homepod mini' />
+                    <div className='bestdeal_hit'>
+                        <img src='/img/deal/a4.png' alt='homepod mini' />
+                    </div>
+                    <div >
+                        <h4>Base Camp Duffel M</h4>
+                        <strong>$ 159.00</strong>
+                    </div>
+                    <p className='mb-0 mt-2'>Table with air purifier, staned veneer/black</p>
+                    <RatingStar />
+                    <div className='btn_addtocart mt-2'>
+                       
+                    </div>
                 </div>
-                <div >
-                    <h4>Base Camp Duffel M</h4>
-                    <strong>$ 159.00</strong>
+
+
+                <div>
+
+                    <div className='bestdeal_hit'>
+                        <img src='/img/deal/a5.png' alt='homepod mini' />
+                    </div>
+                    <div >
+                        <h4>Base Camp Duffel M</h4>
+                        <strong>$ 159.00</strong>
+                    </div>
+                    <p className='mb-0 mt-2'>Table with air purifier, staned veneer/black</p>
+                    <RatingStar />
+                    <div className='btn_addtocart mt-2'>
+                        
+                    </div>
                 </div>
-                <p className='mb-0 mt-2'>Table with air purifier, staned veneer/black</p>
-                <RatingStar />
-                <div className='btn_addtocart mt-2'>
-                    <AddtoCartbutton />
+
+
+                <div>
+
+                    <div className='bestdeal_hit'>
+                        <img src='/img/deal/a6.png' alt='homepod mini' />
+                    </div>
+                    <div >
+                        <h4>Base Camp Duffel M</h4>
+                        <strong>$ 159.00</strong>
+                    </div>
+                    <p className='mb-0 mt-2'>Table with air purifier, staned veneer/black</p>
+                    <RatingStar />
+                    <div className='btn_addtocart mt-2'>
+                        
+                    </div>
                 </div>
-            </div>
-
-
-            <div>
-
-            <div className='bestdeal_hit'>
-                <img src='/img/deal/a5.png' alt='homepod mini' />
-            </div>
-            <div >
-                <h4>Base Camp Duffel M</h4>
-                <strong>$ 159.00</strong>
-            </div>
-            <p className='mb-0 mt-2'>Table with air purifier, staned veneer/black</p>
-            <RatingStar />
-            <div className='btn_addtocart mt-2'>
-                <AddtoCartbutton />
-            </div>
-        </div>
-
-
-        <div>
-
-        <div className='bestdeal_hit'>
-            <img src='/img/deal/a6.png' alt='homepod mini' />
-        </div>
-        <div >
-            <h4>Base Camp Duffel M</h4>
-            <strong>$ 159.00</strong>
-        </div>
-        <p className='mb-0 mt-2'>Table with air purifier, staned veneer/black</p>
-        <RatingStar />
-        <div className='btn_addtocart mt-2'>
-            <AddtoCartbutton />
-        </div>
-    </div>
 
             </Slider>
         </div>

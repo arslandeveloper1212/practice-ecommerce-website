@@ -7,8 +7,10 @@ import Topnav from './components/Topnav';
 import Navbar from './components/Navbar';
 import  Home from './components/Pages/Home';
 import {Routes,Route} from 'react-router-dom';
-import CartData from './components/Pages/CartData';
+
 import CartDataPage from './components/Pages/CartDataPage';
+import PagenotFound from './components/PagenotFound';
+
 
 
 
@@ -19,8 +21,9 @@ function App() {
    <Navbar/>
    <Routes>
    <Route path= '/' element= {<Home/>}/>
+ 
    <Route path= '/cartdatapage' element= {<CartDataPage/>}/>
-   
+   <Route path='*' element= <PagenotFound/> />
    </Routes>
     </div>
   );

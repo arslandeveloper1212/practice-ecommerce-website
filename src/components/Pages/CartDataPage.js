@@ -1,18 +1,26 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getCartTotal } from '../Redux/slices/cartslices';
+import { getCartTotal, removeItem, increaseItemQuantity, decreaseItemQuantity } from '../Redux/slices/cartslices';
 
 
 
 const CartDataPage = () => {
 
+  const { cart, totalQuantity, totalPrice } = useSelector((state) => state.allcart)
   const dispatch = useDispatch();
 
-useEffect(()=>{
-  dispatch(getCartTotal());
-},[])
 
-  const {cart, totalQuantity, totalPrice} = useSelector((state) => state.allcart)
+  const removehere = (id) => {
+    dispatch(removeItem(id))
+  }
+
+
+
+  useEffect(() => {
+    dispatch(getCartTotal());
+  }, [cart])
+
+
   // console.log(getitem);
   return (
     <div>
@@ -27,10 +35,11 @@ useEffect(()=>{
                     <img src={item.image} alt='title' />
                     <p>{item.title}</p>
                     <p>{item.price}</p>
+                    <button className='btn btn-danger mb-4' onClick={() => removehere(item.id)}>Remove</button>
                     <div className='quantity d-flex'>
-                      <button className='btn btn-success'> + </button>
+                      <button className='btn' onClick={() => dispatch(increaseItemQuantity(item.id))}> + </button>
                       <h1>{item.quantity}</h1>
-                      <button className='btn btn-danger'> - </button>
+                      <button className='btn' onClick={() => dispatch(decreaseItemQuantity(item.id))}> - </button>
                     </div>
                   </div>
                 )
@@ -42,22 +51,22 @@ useEffect(()=>{
           <div className='col-md-6'>
             <div className='card'>
               <div className='card-body'>
-              <div className='d-flex justify-content-around'>
-              <p>Total Quantity</p>
-                <p>{totalQuantity}</p>
-                </div> 
                 <div className='d-flex justify-content-around'>
-                <p>Total Price</p>
-                <p>{totalPrice}</p>
-                </div> 
-                
+                  <p>Total Quantity</p>
+                  <p>{totalQuantity}</p>
+                </div>
+                <div className='d-flex justify-content-around'>
+                  <p>Total Price</p>
+                  <p>$: {totalPrice}</p>
+                </div>
+
               </div>
-            </div>
             </div>
           </div>
         </div>
       </div>
-      )
+    </div>
+  )
 }
 
-      export default CartDataPage
+export default CartDataPage

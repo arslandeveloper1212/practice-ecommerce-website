@@ -3,7 +3,7 @@ const CartData =[
     id: 1,
     image: "/img/allpro/a1.png",
     title: "Laptop sleeve MacBook",
-    price: "4459.00",
+    price: "459.00",
     description: "Organic Cotton, fairtrade certified",
     quantity: 1,
     rating: 121,
