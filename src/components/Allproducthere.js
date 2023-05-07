@@ -1,33 +1,21 @@
-import React, { useEffect, useState } from 'react'
-// import allproduct from './allproduct'
-import {addcart} from './Redux/slices/cartslices'
-import {useDispatch,useSelector} from 'react-redux';
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { addcart } from './Redux/slices/cartslices';
 import RatingStar from './RatingStar';
-import { fetchproduct } from './Redux/slices/productslice';
-import Link from 'antd/es/typography/Link';
-const Allproducthere = () => {
-       const dispatch = useDispatch();
-    const data = useSelector(state=>state.product.data);
-    console.log(data);
 
+
+const Allproducthere = () => {
+     const dispatch = useDispatch();
+    const data = useSelector(state=>state.allcart.products);
+   
     
 
-    const fetchResult = (catItem) =>{
-        const result = fetchproduct.filter((curData)=>{
-            return curData.category===catItem;
-            
-        })
-        // setData(result);
+    const add = (item)=>{
+        dispatch(addcart(item))
     }
 
-    const Addtocart = (item)=>{
-        dispatch(addcart(item));
-    }
-
-        useEffect(()=>{
-            dispatch(fetchproduct())
-        },[])
-
+  
+       
     return (
         <div>
             <div>
@@ -35,7 +23,7 @@ const Allproducthere = () => {
                 <div className='card_controls_allproduct d-flex flex-wrap justify-content-between' >
 
                     {
-                     data &&   data.map((item, i) => {
+               data &&  data.map((item, i) => {
                             return (
                                 <div key={i}>
                                     <div class="card mb-4" style={{ width: "20rem", cursor:"pointer" }}>
@@ -48,7 +36,7 @@ const Allproducthere = () => {
                                             <p class="card-text mb-0">{item.text}</p>
                                             <RatingStar />
                                             <div className='p-addtocart mt-2 mb-2'>
-                                                <button className='addtocart' onClick={()=>Addtocart(item)}>Add to Cart</button>
+                                                <button className='addtocart' onClick={()=>add(item)}>Add to Cart</button>
                                             </div>
                                         </div>
                                     </div>

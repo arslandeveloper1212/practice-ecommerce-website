@@ -8,6 +8,7 @@ import Navbar from './components/Navbar';
 import  Home from './components/Pages/Home';
 import {Routes,Route} from 'react-router-dom';
 import CartData from './components/Pages/CartData';
+import CartDataPage from './components/Pages/CartDataPage';
 
 
 
@@ -18,7 +19,7 @@ function App() {
    <Navbar/>
    <Routes>
    <Route path= '/' element= {<Home/>}/>
-   <Route path= '/cartdata' element= {<CartData/>}/>
+   <Route path= '/cartdatapage' element= {<CartDataPage/>}/>
    
    </Routes>
     </div>

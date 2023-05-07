@@ -8,11 +8,11 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-  const item = useSelector(state => state.cart.products)
+  const item = useSelector(state => state.allcart.cart)
   const Navigate = useNavigate();
 
   const handleClick = (e) =>{
-      Navigate("/cartdata")
+      Navigate("/cartdatapage")
   }
 
   return (
@@ -36,7 +36,7 @@ const Navbar = () => {
 
 
               
-              <Badge badgeContent={item.length} color="primary">
+              <Badge badgeContent={item.length}  color="primary">
              
                   <AddShoppingCartIcon onClick={handleClick}/>
                  
